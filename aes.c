@@ -6,7 +6,7 @@
  * MCrypt API available online:
  * http://linux.die.net/man/3/mcrypt
  */
-#include "/lib/mcrypt.h"
+#include "lib/mcrypt.h"
 
 #include <math.h>
 #include <stdint.h>
@@ -61,12 +61,12 @@ void display(char* ciphertext, int len){
 int main()
 {
   MCRYPT td, td2;
-  char * plaintext = "AS!@(*#HEDBD";
+  char * plaintext = "AS!@(*#HEDBD123fwwww";
   char* IV = "AAAAAAAAAAAAAAAA";
   char *key = "0123456789abcdef";
   int keysize = 16; /* 128 bits */
   char* buffer;
-  int buffer_len = 16;
+  int buffer_len = 20;  // adjust buffer_len to make plain longer
 
   buffer = calloc(1, buffer_len);
   strncpy(buffer, plaintext, buffer_len);
